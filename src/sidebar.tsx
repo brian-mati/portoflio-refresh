@@ -50,6 +50,7 @@ function Resume(){
 }
 
 function Schedule(){
+
   const playerRef = useRef<Player>(null);
   useEffect(() => {
     playerRef.current?.playFromBeginning()
@@ -58,7 +59,9 @@ function Schedule(){
     <Player
     ref={playerRef}
     icon={schedule}
-    onComplete={() => playerRef.current?.playFromBeginning()}
+    onComplete={() => {
+      
+      playerRef.current?.playFromBeginning()}}
     />
   )
 }
