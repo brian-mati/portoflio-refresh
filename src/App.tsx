@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <main>
-                          <Sidebar/>
+        <Sidebar/>
         <section className='max-w-md leading-7'>
           <p> Hello there and welcome to my small corner
 of the inter webs where i share my experiences,
