@@ -69,8 +69,8 @@ function Schedule(){
 
 export default function Sidebar() {
   return (
-    <nav className='max-h-sm self-center'>
-      <ul className='flex flex-col gap-4'>
+    <nav className='sidebar'>
+      <ul className=''>
         <li><Home/></li>
         <li><About/></li>
         <li><Resume/></li>
