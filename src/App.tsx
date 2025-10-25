@@ -2,6 +2,7 @@
 import './App.css'
 import './index.css'
 import Sidebar from './sidebar.tsx'
+import Links  from './links.tsx'
 function App() {
   
 
@@ -21,6 +22,7 @@ through grueling ours of building applications
 to entertain and test myself. <span className='inline-block mr-4 underline'>Read more</span>
  </span>
  </p>
+    <Links/>
         </section>
       </main>
        </>

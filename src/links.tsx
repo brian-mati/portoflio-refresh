@@ -1,10 +1,10 @@
-import { useState } from "react";
 
-export function Links(){
-    const [isClicked,setIsClicked] = useState(false);
+
+export default function Links(){
+  
     return(
-        <ul>
-            <li></li>
+        <ul className="links">
+            <li>links position</li>
         </ul>
     )
 }
