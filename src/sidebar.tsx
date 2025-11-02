@@ -1,92 +1,143 @@
-import { useEffect, useRef } from 'react';
-import { Player } from '@lordicon/react';
+import { useEffect, useRef,useState } from 'react'
+import { Player } from '@lordicon/react'
+// import { IconComponents } from './components/icons'
 
-import home from './assets/home.json';
-import about from './assets/about.json';
-import resume from './assets/resume.json';
-import schedule from './assets/schedule.json';
+import home from './assets/home.json'
+import about from './assets/about.json'
+import resume from './assets/resume.json'
+import schedule from './assets/schedule.json'
 
+function Home() {
+     const [isHovered, setIsHovered] = useState<boolean>(false)
+    const playerRef = useRef<Player>(null)
 
-
-function Home(){
-  const playerRef = useRef<Player>(null);
-
-
-  useEffect( () => {
-    playerRef.current?.playFromBeginning()
-  } , [])
-  return(
-   
-       <Player
-    ref={playerRef}
-    icon={home}
-    onComplete={ () => 
-        playerRef.current?.pause()
-    }
-    />
-   
-   
-  )
+    useEffect(() => {
+        playerRef.current?.playFromBeginning()
+    }, [])
+     useEffect(() => {
+        if (isHovered) {
+            playerRef.current?.playFromBeginning()
+        } else {
+            playerRef.current?.pause()
+        }
+    }, [isHovered])
+    return (
+         <div
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <Player
+                ref={playerRef}
+                icon={home}
+             
+            />
+        </div>
+       
+    )
 }
 
-function About(){
-  const playerRef = useRef<Player>(null);
-  useEffect(() => {
-    playerRef.current?.playFromBeginning()
-  },[])
-  return(
-    <Player
-    ref={playerRef}
-    icon={about}
-    onComplete={() => playerRef.current?.pause()}
-    />
-  )
+function About() {
+    const [isHovered, setIsHovered] = useState<boolean>(false)
+    const playerRef = useRef<Player>(null)
+    useEffect(() => {
+        playerRef.current?.playFromBeginning()
+    }, [])
+    useEffect(() => {
+        if (isHovered) {
+            playerRef.current?.playFromBeginning()
+        } else {
+            playerRef.current?.pause()
+        }
+    }, [isHovered])
+    return (
+        <div
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <Player
+                ref={playerRef}
+                icon={about}
+             
+            />
+        </div>
+     
+    )
 }
 
-function Resume(){
-  const playerRef = useRef<Player>(null);
-  useEffect(() => {
-    playerRef.current?.playFromBeginning()
-  },[])
-  return(
-    <Player
-    ref={playerRef}
-    icon={resume}
-    onComplete={() => playerRef.current?.pause()}
-    />
-  )
+function Resume() {
+     const [isHovered, setIsHovered] = useState<boolean>(false)
+    const playerRef = useRef<Player>(null)
+    useEffect(() => {
+        playerRef.current?.playFromBeginning()
+    }, [])
+    useEffect(() => {
+        if (isHovered) {
+            playerRef.current?.playFromBeginning()
+        } else {
+            playerRef.current?.pause()
+        }
+    }, [isHovered])
+    return (
+         <div
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <Player
+                ref={playerRef}
+                
+                icon={resume}
+            />
+        </div>
+       
+    )
 }
 
-function Schedule(){
+function Schedule() {
+    const [isHovered, setIsHovered] = useState<boolean>(false)
+    const playerRef = useRef<Player>(null)
 
-  const playerRef = useRef<Player>(null);
-  useEffect(() => {
-    playerRef.current?.playFromBeginning()
-  },[])
-  return(
-    <Player
-    ref={playerRef}
-    icon={schedule}
-    onComplete={() => {
-      
-      playerRef.current?.pause()}}
-    />
-  )
+    useEffect(() => {
+        playerRef.current?.playFromBeginning()
+    }, [])
+
+    useEffect(() => {
+        if (isHovered) {
+            playerRef.current?.playFromBeginning()
+        } else {
+            playerRef.current?.pause()
+        }
+    }, [isHovered])
+
+    return (
+        <div
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <Player
+                ref={playerRef}
+                icon={schedule}
+            />
+        </div>
+    )
 }
-
 
 export default function Sidebar() {
-  return (
-    <nav className='sidebar'>
-      <ul className=''>
-        <li>
-          <Home/>
-</li>
-        <li><About/></li>
-        <li><Resume/></li>
-        <li><Schedule/></li>
-      </ul>
-    </nav>
-  );
+    return (
+        <nav className="sidebar">
+            <ul className="">
+                <li>
+                    <Home />
+                </li>
+                <li>
+                    <About />
+                </li>
+                <li>
+                    <Resume />
+                </li>
+                <li>
+                    <Schedule />
+                </li>
+            </ul>
+        </nav>
+    )
 }
-
