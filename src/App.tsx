@@ -1,6 +1,6 @@
 import './App.css'
 import './index.css'
-import Sidebar from './sidebar.tsx'
+import Sidebar from './components/sidebar.tsx'
 import Links from './links.tsx'
 function App() {
     return (

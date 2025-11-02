@@ -2,10 +2,10 @@ import { useEffect, useRef,useState } from 'react'
 import { Player } from '@lordicon/react'
 // import { IconComponents } from './components/icons'
 
-import home from './assets/home.json'
-import about from './assets/about.json'
-import resume from './assets/resume.json'
-import schedule from './assets/schedule.json'
+import home from '../assets/home.json'
+import about from '../assets/about.json'
+import resume from '../assets/resume.json'
+import schedule from '../assets/schedule.json'
 
 function Home() {
      const [isHovered, setIsHovered] = useState<boolean>(false)
